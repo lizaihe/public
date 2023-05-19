@@ -1,0 +1,81 @@
+[ git 영역 ]
+
+1. Working Directory (Local)
+   Local PC Directory
+2. Staging 영역
+   git add 를 통해 수정된코드를 준비
+3. Repository 영역
+   git Commit 를 통해 최종 수정본 제출(Local 버전관리)
+4. Remote 영역
+   github 원격 저장소 영역 Repository - Branch 영역으로 관리
+
+
+[git 작업 순서]
+
+1. git 설치
+   $>sudo apt install-all
+
+2. Repository(저장소) 생성
+   - $>git init
+   - $>git clone [github 저장소 URL]
+   * .git Directory 생성
+
+3. 파일 생성 및 수정(Local)
+   - edit
+
+4. Staging 영역에 추가
+   - Commit할 대상을 임시저장
+   - $>git add .       # 천체 추가
+   - $>git add [파일이름]
+   - $>git add -A     # 추가된 영역만 추가
+
+5. Commit (Local Repository)
+   - Staging -> Commit (버전관리)
+   - $>git commit -m [메세지명 : 버전의 메모 Update 내용]
+     예) gir commit -m "First Commit - mysql connect"
+
+[원격 저장소 연결]
+
+1. Remote 
+   - 원격 저장소에 연결한다
+   - 원격저장소 github URL : github 접속후 Repository의 [<> CODE] 에서 확인
+   - $>git remote add [원격연결이름] [원격저장소 github URL]
+         예) git remote add github_private https://github.com/lizaihe/private.git
+
+2. push
+   - 원격저장소의 [브랜치]에 Commit된 파일을 Upload 저장합니다
+   - $>git push [원격연결이름] [브랜치]
+          예) git push github_private master
+   -$>git branch -M [main]   #branch Change
+   -$>git push github-private main
+
+3. pull
+   - 원격 저장소의 변경 내용을 Local 저장소로 반영
+   - $>git pull [원격연결이름] [브랜치]
+         예)git pull git_hub_private master
+
+[Git Branch]
+
+1. branch 확인
+   -$> git branch    #현재설정된 branch 앞에 * 표시
+
+2. branch 생성
+   -$>git branch [newbranch]      #new branch를 신규로 생성한다
+
+3. branch 전환
+   -$>git checkout [newbranch]   #nes branch로 전환 git branch로 확인
+
+
+[Git 명령어]
+
+1. log
+   -$> git log               #log 확인
+   -$>git log --oneline   # 한줄 log
+
+2. 취소 (Working -> Staging)
+   -$>git diff                #working vs staging 확인
+   -$>git reset              #staging 반영 취소
+
+   -$>git reset --hard     #working 까지 취소
+
+
